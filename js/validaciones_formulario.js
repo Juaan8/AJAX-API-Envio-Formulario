@@ -47,9 +47,10 @@ function contactForm() {
 
 	$loader.classList.remove("none");
 
-	fetch("https://formsubmit.co/ajax/juancogo38@gmail.com", {
+	fetch("assets/send_mail.php", {
 		method: "POST",
-		body: new FormData(e.target)
+		body: new FormData(e.target),
+		mode: "cors"
 	})
 		.then(res => res.ok ? res.json(): Promise.reject(res))
 		.then(json => {
